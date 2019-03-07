@@ -1,6 +1,8 @@
 package network;
 
+import model.Auth;
 import model.McResult;
+import model.Register;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -15,7 +17,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("auth")
-    Call<McResult> mc_getAuth(
+    Call<Auth> mc_auth(
             @Field("account") String account,
             @Field("pwd") String pwd
     );
@@ -28,7 +30,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/register")
-    Call<McResult> mc_register(
+    Call<Register> mc_register(
             @Field("pwd") String pwd,
             @Field("token") String token
     );

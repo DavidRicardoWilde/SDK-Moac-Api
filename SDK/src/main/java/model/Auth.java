@@ -1,13 +1,25 @@
 package model;
 
 public class Auth {
+    
+
+
+
     private boolean success;
     private String message;
-    private String token;
+    private String data;
 
-    public Auth(boolean success,String data){
+    public Auth(boolean success, String message, String data){
         this.success=success;
-        this.token=data;
+        this.message=message;
+        this.data=data;
+    }
+
+    //error
+    public Auth(boolean success, String message){
+        this.success = success;
+        this.message = message;
+        this.data = "";
     }
 
     public void setSuccess(boolean success){
@@ -22,10 +34,10 @@ public class Auth {
      * @return auth token
      */
     public String getToken(){
-        return token;
+        return data;
     }
     public void setToken(String token){
-        this.token=token;
+        this.data=token;
     }
 
     public String getMessage(){return message;}

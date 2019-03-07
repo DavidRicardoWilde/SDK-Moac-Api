@@ -20,6 +20,4 @@ public class McResult {
     public String getData(){
         return data;
     }
-
-    public String getAddress(){return address;}
 }

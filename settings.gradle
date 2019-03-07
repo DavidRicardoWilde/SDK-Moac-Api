@@ -1,0 +1,4 @@
+rootProject.name = 'SDK-Moac-Api'
+include 'SDK'
+include 'Demo'
+

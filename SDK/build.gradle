@@ -11,6 +11,40 @@ repositories {
     mavenCentral()
 }
 
+def retrofitVersion='2.3.0'
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //chain3 - implementation
+    implementation group: 'io.github.moacchain', name: 'core', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'utils', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'crypto', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'tuples', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'codegen', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'abi', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'rlp', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'console', version: '0.1.0'
+    implementation group: 'io.github.moacchain', name: 'moac', version: '0.1.0'
+
+    //network
+    implementation(
+            'commons-httpclient:commons-httpclient:3.1',
+
+            "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-moshi:${retrofitVersion}",
+            "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-jackson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-jackson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-simplexml:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-moshi:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-wire:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
+
+            'com.squareup.okhttp3:logging-interceptor:3.10.0',
+            'com.squareup.okhttp3:okhttp:3.8.0'
+    )
 }

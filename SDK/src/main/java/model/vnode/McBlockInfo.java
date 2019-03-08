@@ -1,4 +1,4 @@
-package model;
+package model.vnode;
 
 
 import org.chain3j.abi.datatypes.Int;

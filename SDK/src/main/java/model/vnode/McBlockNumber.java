@@ -1,7 +1,8 @@
-package model;
+package model.vnode;
 
-public class McBalance {
-    public McBalance(){}
+public class McBlockNumber {
+    public McBlockNumber(){}
+
 
     private boolean success = false;
     private String message = null;

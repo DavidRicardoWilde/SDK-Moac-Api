@@ -1,6 +1,10 @@
 package network;
 
 import model.*;
+import model.acount.McLogin;
+import model.acount.McRegister;
+import model.micro.*;
+import model.vnode.*;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -28,7 +32,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/register")
-    Call<Register> mc_register(
+    Call<McRegister> mc_register(
             @Field("pwd") String pwd,
             @Field("token") String token
     );
@@ -43,7 +47,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/login")
-    Call<Login> mc_login(
+    Call<McLogin> mc_login(
             @Field("address") String address,
             @Field("pwd") String pwd,
             @Field("keystore") String keyStore,
@@ -95,7 +99,7 @@ public interface MoacInterface {
     Call<McBlockInfo> mc_getBlockInfo(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
-            @Field("block")String block,
+            @Field("block") String block,
             @Field("token") String token
     );
 
@@ -154,10 +158,10 @@ public interface MoacInterface {
             @Field("vnodeport") String vnodeport,
             @Field("from")String from,
             @Field("to") String to,
-            @Field("amount") int amount,
+            @Field("amount") Integer amount,
             @Field("method") String method,
-            @Field("paramtypes") String[] paramtypes,
-            @Field("paramvalues") Integer[] paramvalues,
+            @Field("paramtypes") String paramtypes,
+            @Field("paramvalues") String paramvalues,
             @Field("privatekey") String privatekey,
             @Field("token") String token
     );
@@ -199,13 +203,13 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/transferErc")
-    Call<McResult> mc_transgerErc(
+    Call<McTransferErc> mc_transferErc(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeprot,
             @Field("from") String from,
             @Field("to") String to,
             @Field("contractaddress") String contractaddress,
-            @Field("amount") String amount,
+            @Field("amount") Integer amount,
             @Field("privatekey") String privatekey,
             @Field("token") String token
     );
@@ -221,7 +225,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getErcBalance")
-    Call<McResult> mc_getErcBalance(
+    Call<McErcBalance> mc_getErcBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeprot") String vnodeport,
             @Field("address") String address,
@@ -243,50 +247,72 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/ercApprove")
-    Call<McResult> mc_ercApprove(
+    Call<McErcApprove> mc_ercApprove(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
-            @Field("amount") String amount,
+            @Field("amount") Integer amount,
             @Field("privatekey") String privatekey,
             @Field("microchainaddress") String microchainaddress,
             @Field("contractaddress") String contractaddress,
             @Field("token") String token
     );
 
-    @FormUrlEncoded
-    @POST("api/vnode/v1.0/buyErcMintToken")
-    Call<McResult> mc_buyErcMintToken(
-            @Field("vnodeip") String vnodeip,
-            @Field("vmpde@prt") String vnodeport,
-            @Field("address") String address,
-            @Field("amount") String amount,
-            @Field("privatekey") String privatekey,
-            @Field("microchainaddress") String microchainaddress,
-            @Field("token") String token
-    );
-
-    /***
+    /**
      *
      * @param vnodeip
      * @param vnodeport
      * @param address
      * @param privatekey
      * @param microchainaddress
+     * @param method
+     * @param paramtypes
+     * @param paramvalues
      * @param token
      * @return
      */
     @FormUrlEncoded
-    @POST("api/vnode/v1.0/buyMoacMintToken")
-    Call<McResult> mc_buyMoacMintToken(
+    @POST("api/vnode/v1.0/buyErcMintToken")
+    Call<McBuyErcMintToken> mc_buyErcMintToken(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
             @Field("privatekey") String privatekey,
             @Field("microchainaddress") String microchainaddress,
+            @Field("method") String method,
+            @Field("paramtypes") String paramtypes,
+            @Field("paramvalues") String paramvalues,
             @Field("token") String token
     );
 
+    /**
+     *
+     * @param vnodeip
+     * @param vnodeport
+     * @param address
+     * @param privatekey
+     * @param microchainaddress
+     * @param paramtypes
+     * @param paramvalues
+     * @param token
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("api/vnode/v1.0/buyMoacMintToken")
+    Call<McBuyMoacMintToken> mc_buyMoacMintToken(
+            @Field("vnodeip") String vnodeip,
+            @Field("vnodeport") String vnodeport,
+            @Field("address") String address,
+            @Field("privatekey") String privatekey,
+            @Field("microchainaddress") String microchainaddress,
+            @Field("method") String method,
+            @Field("paramtypes") String paramtypes,
+            @Field("paramvalues") String paramvalues,
+            @Field("token") String token
+    );
+
+
+    //Micro
     /***
      *
      * @param microip
@@ -297,7 +323,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBlockNumber")
-    Call<McResult> micro_getBlockNumber(
+    Call<MicroBlockNumber> micro_getBlockNumber(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -315,7 +341,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBlock")
-    Call<McResult> micro_getBlock(
+    Call<MicroBlockInfo> micro_getBlock(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -334,7 +360,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBalance")
-    Call<McResult>micro_getBalance(
+    Call<MicroBalance>micro_getBalance(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -344,7 +370,7 @@ public interface MoacInterface {
 
     @FormUrlEncoded
     @POST("api//micro/v1.0/transferCoin")
-    Call<McResult> micro_transferCoin(
+    Call<MicroTransferCoin> micro_transferCoin(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("microip") String microip,
@@ -353,12 +379,12 @@ public interface MoacInterface {
             @Field("via") String via,
             @Field("from") String from,
             @Field("to") String to,
-            @Field("amount") String amount,
+            @Field("amount") Integer amount,
             @Field("privatekey") String privatekey,
             @Field("token") String token
     );
 
-    /***
+    /**
      *
      * @param vnodeip
      * @param vnodeport
@@ -369,24 +395,28 @@ public interface MoacInterface {
      * @param via
      * @param amount
      * @param dappaddress
-     * @param data
+     * @param method
+     * @param paramtypes
+     * @param paramvalues
      * @param privatekey
      * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/sendRawTransaction")
-    Call<McResult> micro_sanrawTransaction(
+    Call<MicroSendRawTransaction> micro_sendRawTransaction(
             @Field("vnodeip") String vnodeip,
-            @Field("vnodepoet") String vnodeport,
+            @Field("vnodeport") String vnodeport,
             @Field("microip") String microop,
             @Field("microport") String microport,
             @Field("from") String from,
             @Field("microchainaddress") String microchainaddress,
             @Field("via") String via,
-            @Field("amount") String amount,
+            @Field("amount") Integer amount,
             @Field("dappaddress") String dappaddress,
-            @Field("data") String data,
+            @Field("method") String method,
+            @Field("paramtypes") String paramtypes,
+            @Field("paramvalues") String paramvalues,
             @Field("privatekey") String privatekey,
             @Field("token") String token
     );
@@ -403,7 +433,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/callContract")
-    Call<McResult> micro_callContract(
+    Call<MicroCallContract> micro_callContract(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -428,7 +458,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("/api//micro/v1.0/redeemMintToken")
-    Call<McResult> micro_redeemMintToken(
+    Call<MicroRedeemErcMintToken> micro_redeemErcMintToken(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("microip") String microip,
@@ -436,9 +466,24 @@ public interface MoacInterface {
             @Field("microchainaddress") String microchainaddress,
             @Field("dappbaseaddress") String dappbaseaddress,
             @Field("address") String address,
-            @Field("amount") String amount,
+            @Field("amount") Integer amount,
             @Field("privatekey") String privatekey,
             @Field("token") String token
+    );
+
+    @FormUrlEncoded
+    @POST("api//micro/v1.0/redeemMoacMintToken")
+    Call<MicroRedeemMoacMintToken>micro_redeemMoacMintToken(
+      @Field("vnodeip") String vnodeip,
+      @Field("vnodeport") String vnodeport,
+      @Field("microipHmonitor") String microipHmonitor,
+      @Field("microport") String microport,
+      @Field("microchainaddress") String microchainaddress,
+      @Field("dappbaseaddress")String dappbaseaddress,
+      @Field("address")String address,
+      @Field("amount")Integer amount,
+      @Field("privatekey")String privatekey,
+      @Field("token")String token
     );
 
 }

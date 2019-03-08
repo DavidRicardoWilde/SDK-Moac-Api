@@ -1,5 +1,5 @@
 import manager.MoacServiceManager;
-import model.*;
+import model.vnode.McSendRawTransaction;
 
 import java.io.IOException;
 
@@ -18,8 +18,8 @@ public class SDKDemo {
 //            System.out.println("token: "+auth.getToken());
 
             //register
-            String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzZkMzYzZTNkYjhmYzM4M2VmNGU2OGQiLCJhY2NvdW50IjoidGVzdCIsInB3ZCI6IjEyMzQ1NiIsIl9fdiI6MCwiaWF0IjoxNTUyMDAxMjg5LCJleHAiOjE1NTIwMDg0ODl9.kij8VauphSfuqdsDGPzDoBpcweZzKG9Bzw8GJlszss4";
-//            Register register=moacServiceManager.mc_register("test", token);
+            String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzZkMzYzZTNkYjhmYzM4M2VmNGU2OGQiLCJhY2NvdW50IjoidGVzdCIsInB3ZCI6IjEyMzQ1NiIsIl9fdiI6MCwiaWF0IjoxNTUyMDIwOTkzLCJleHAiOjE1NTIwMjgxOTN9.smJheU7Os3_UZq6X75WBdmPTHSFVXfnhyvsjfcvFSSM";
+//            McRegister register=moacServiceManager.mc_register("test", token);
 //            System.out.println("address: "+register.getData().getaddress());
 //            System.out.println("address: "+register.getData().getKeyStore());
 
@@ -28,7 +28,7 @@ public class SDKDemo {
             String pwd="test";
             String keystore="{\"version\":3,\"id\":\"8af214aa-4ffe-41da-bbe1-e433e1274815\",\"address\":\"7b319aabaf37f2081db2d2998a777659b044be22\",\"crypto\":{\"ciphertext\":\"230f39f3bc840bcdd97b5fea1dc0f9aab8a6d4b1d5a2eae9165b542dd277bdef\",\"cipherparams\":{\"iv\":\"c6051fb024294d3d13cb3dd85ff1edcb\"},\"cipher\":\"aes-128-ctr\",\"kdf\":\"scrypt\",\"kdfparams\":{\"dklen\":32,\"salt\":\"b83bc08499deac08c87b8930130d3ce2b2cb2129da6cf72ec6ce70c296289a47\",\"n\":8192,\"r\":8,\"p\":1},\"mac\":\"b292192225e1203ba1472a742b279821314971d6ae0217e97d085747f0ebc2a5\"}}";
             //            System.out.println("keystore: "+keystore);
-//            Login login = moacServiceManager.mc_login(address,pwd,keystore,token);
+//            McLogin login = moacServiceManager.mc_login(address,pwd,keystore,token);
 //            System.out.println("data: "+login.getData());
 
             //getBalance
@@ -55,12 +55,16 @@ public class SDKDemo {
             String to="0xd90D1aE327a47bAa810BAaD89F1762C82BDE47E4";
             Integer amount= 10;
             String method="buyMintToken(uint256)";
-            Integer[] paramvalues=new Integer[]{100000000};
-            String [] paramtypes= new String[]{"uint256"};
+//            Integer[] paramvalues=new Integer[]{100000000};
+            String paramvalues="[100000000]";
+//            String [] paramtypes= new String[]{"uint256"};
+            String paramtypes = "[\"uint256\"]";
             String privatekey="0xd3cab73941500840bbe7da562c5c3f2bc6b8979d1e59e07f13cec9c7a07e9884";
             McSendRawTransaction mcSendRawTransaction = moacServiceManager.mc_sendRawTransaction("", "",
-                    from,to,amount,method,paramtypes,paramvalues,privatekey,token);
-            System.out.println("Message "+ mcSendRawTransaction.getMessage());
+                  from,to,amount,method,paramtypes,paramvalues,privatekey,token);
+            System.out.println("Message "+ mcSendRawTransaction.getSuccess());
+
+
         }catch (IOException e){
             e.printStackTrace();
         }

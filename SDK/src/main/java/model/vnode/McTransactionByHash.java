@@ -1,4 +1,4 @@
-package model;
+package model.vnode;
 
 import jnr.ffi.annotations.In;
 import org.chain3j.abi.datatypes.Int;

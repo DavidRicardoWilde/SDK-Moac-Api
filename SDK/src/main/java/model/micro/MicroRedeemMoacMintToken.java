@@ -1,7 +1,7 @@
-package model;
+package model.micro;
 
-public class Login {
-    public Login(){}
+public class MicroRedeemMoacMintToken {
+    public MicroRedeemMoacMintToken(){}
 
     private boolean success = false;
     private String message = null;

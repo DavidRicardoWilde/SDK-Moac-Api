@@ -1,4 +1,4 @@
-package model;
+package model.vnode;
 
 import jnr.ffi.annotations.In;
 

@@ -1,8 +1,7 @@
-package model;
+package model.acount;
 
-public class McBlockNumber {
-    public McBlockNumber(){}
-
+public class McLogin {
+    public McLogin(){}
 
     private boolean success = false;
     private String message = null;

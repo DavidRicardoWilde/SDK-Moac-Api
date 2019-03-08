@@ -1,6 +1,6 @@
-package model;
+package model.acount;
 
-public class Register {
+public class McRegister {
     private boolean success;
     private String message;
     private Data data;
@@ -26,7 +26,7 @@ public class Register {
         }
     }
 
-    public Register(boolean success, String message, Data data){
+    public McRegister(boolean success, String message, Data data){
         this.success = success;
         this.message = message;
         this.data = data;

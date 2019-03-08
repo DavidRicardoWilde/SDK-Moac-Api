@@ -1,4 +1,4 @@
-package model;
+package model.vnode;
 
 public class McSendRawTransaction {
     public McSendRawTransaction(){}

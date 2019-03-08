@@ -1,10 +1,6 @@
 package model;
 
 public class Auth {
-    
-
-
-
     private boolean success;
     private String message;
     private String data;

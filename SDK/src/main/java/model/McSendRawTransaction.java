@@ -1,7 +1,7 @@
 package model;
 
-public class McResult {
-    public McResult(){}
+public class McSendRawTransaction {
+    public McSendRawTransaction(){}
 
     private boolean success = false;
     private String message = null;

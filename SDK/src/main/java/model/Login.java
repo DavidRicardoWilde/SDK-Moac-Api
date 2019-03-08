@@ -1,7 +1,7 @@
 package model;
 
-public class McResult {
-    public McResult(){}
+public class Login {
+    public Login(){}
 
     private boolean success = false;
     private String message = null;

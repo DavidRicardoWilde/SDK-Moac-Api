@@ -5,6 +5,9 @@ public class Register {
     private String message;
     private Data data;
 
+    /**
+     * Parameter: paddress, privatekey, keystore
+     */
     public class Data{
         private String address;
         private String privateKey;
@@ -45,6 +48,10 @@ public class Register {
         this.message = message;
     }
 
+    /**
+     *
+     * @return
+     */
     public Data getData(){
         return data;
     }

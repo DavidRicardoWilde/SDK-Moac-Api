@@ -1,7 +1,7 @@
 package model;
 
-public class McResult {
-    public McResult(){}
+public class McBalance {
+    public McBalance(){}
 
     private boolean success = false;
     private String message = null;

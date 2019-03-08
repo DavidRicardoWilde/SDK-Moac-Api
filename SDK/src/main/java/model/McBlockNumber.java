@@ -1,7 +1,8 @@
 package model;
 
-public class McResult {
-    public McResult(){}
+public class McBlockNumber {
+    public McBlockNumber(){}
+
 
     private boolean success = false;
     private String message = null;

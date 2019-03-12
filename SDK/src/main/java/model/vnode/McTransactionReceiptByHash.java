@@ -3,11 +3,6 @@ package model.vnode;
 import jnr.ffi.annotations.In;
 
 public class McTransactionReceiptByHash {
-    private boolean success;
-    private String message;
-    private Data data;
-
-    public class Data{
         private String blockHash;
         private Integer blockNumber;
         private String contractAddress;
@@ -68,29 +63,4 @@ public class McTransactionReceiptByHash {
         public String getTransactionIndex() {
             return transactionIndex;
         }
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Data getData() {
-        return data;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
 }

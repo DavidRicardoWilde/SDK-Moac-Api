@@ -1,9 +1,7 @@
 package network;
 
 import model.*;
-import model.acount.McLogin;
 import model.acount.McRegister;
-import model.micro.*;
 import model.vnode.*;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -19,7 +17,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("auth")
-    Call<Auth> mc_auth(
+    Call<McResponse> mc_auth(
             @Field("account") String account,
             @Field("pwd") String pwd
     );
@@ -32,7 +30,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/register")
-    Call<McRegister> mc_register(
+    Call<McResponse<McRegister>> mc_register(
             @Field("pwd") String pwd,
             @Field("token") String token
     );
@@ -47,7 +45,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/login")
-    Call<McLogin> mc_login(
+    Call<McResponse> mc_login(
             @Field("address") String address,
             @Field("pwd") String pwd,
             @Field("keystore") String keyStore,
@@ -64,7 +62,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBalance")
-    Call<McBalance> mc_getBalance(
+    Call<McResponse> mc_getBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
@@ -80,7 +78,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBlockNumber")
-    Call<McBlockNumber> mc_getBlockNumber(
+    Call<McResponse> mc_getBlockNumber(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("token") String token
@@ -96,7 +94,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBlockInfo")
-    Call<McBlockInfo> mc_getBlockInfo(
+    Call<McResponse<McBlockInfo>> mc_getBlockInfo(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("block") String block,
@@ -113,7 +111,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getTransactionReceiptByHash")
-    Call<McTransactionByHash>mc_getTransactionByHash(
+    Call<McResponse<McTransactionByHash>>mc_getTransactionByHash(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("hash") String hash,
@@ -130,7 +128,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getTransactionReceiptByHash")
-    Call<McTransactionReceiptByHash>mc_getTransactionReceiptByHash(
+    Call<McResponse<McTransactionReceiptByHash>>mc_getTransactionReceiptByHash(
             @Field("vnodeip") String vnodeip,
             @Field("vnodepost") String vnodeport,
             @Field("hash") String hash,
@@ -153,7 +151,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/sendRawTransaction")
-    Call<McSendRawTransaction> mc_sendRawTransaction(
+    Call<McResponse> mc_sendRawTransaction(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("from")String from,
@@ -179,7 +177,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/callContract")
-    Call<McResult> mc_callContract(
+    Call<McResponse> mc_callContract(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
@@ -203,7 +201,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/transferErc")
-    Call<McTransferErc> mc_transferErc(
+    Call<McResponse> mc_transferErc(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeprot,
             @Field("from") String from,
@@ -225,7 +223,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getErcBalance")
-    Call<McErcBalance> mc_getErcBalance(
+    Call<McResponse> mc_getErcBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeprot") String vnodeport,
             @Field("address") String address,
@@ -247,7 +245,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/ercApprove")
-    Call<McErcApprove> mc_ercApprove(
+    Call<McResponse> mc_ercApprove(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
@@ -273,7 +271,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/buyErcMintToken")
-    Call<McBuyErcMintToken> mc_buyErcMintToken(
+    Call<McResponse> mc_buyErcMintToken(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
@@ -299,7 +297,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/buyMoacMintToken")
-    Call<McBuyMoacMintToken> mc_buyMoacMintToken(
+    Call<McResponse> mc_buyMoacMintToken(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
@@ -323,7 +321,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBlockNumber")
-    Call<MicroBlockNumber> micro_getBlockNumber(
+    Call<McResponse> micro_getBlockNumber(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -341,7 +339,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBlock")
-    Call<MicroBlockInfo> micro_getBlock(
+    Call<McResponse> micro_getBlock(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -360,7 +358,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBalance")
-    Call<MicroBalance>micro_getBalance(
+    Call<McResponse>micro_getBalance(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -370,7 +368,7 @@ public interface MoacInterface {
 
     @FormUrlEncoded
     @POST("api//micro/v1.0/transferCoin")
-    Call<MicroTransferCoin> micro_transferCoin(
+    Call<McResponse> micro_transferCoin(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("microip") String microip,
@@ -404,7 +402,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/sendRawTransaction")
-    Call<MicroSendRawTransaction> micro_sendRawTransaction(
+    Call<McResponse> micro_sendRawTransaction(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("microip") String microop,
@@ -433,7 +431,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api//micro/v1.0/callContract")
-    Call<MicroCallContract> micro_callContract(
+    Call<McResponse> micro_callContract(
             @Field("microip") String microip,
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
@@ -458,7 +456,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("/api//micro/v1.0/redeemMintToken")
-    Call<MicroRedeemErcMintToken> micro_redeemErcMintToken(
+    Call<McResponse> micro_redeemErcMintToken(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("microip") String microip,
@@ -473,7 +471,7 @@ public interface MoacInterface {
 
     @FormUrlEncoded
     @POST("api//micro/v1.0/redeemMoacMintToken")
-    Call<MicroRedeemMoacMintToken>micro_redeemMoacMintToken(
+    Call<McResponse>micro_redeemMoacMintToken(
       @Field("vnodeip") String vnodeip,
       @Field("vnodeport") String vnodeport,
       @Field("microipHmonitor") String microipHmonitor,

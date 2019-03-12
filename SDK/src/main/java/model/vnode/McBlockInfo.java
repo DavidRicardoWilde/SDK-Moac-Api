@@ -6,13 +6,6 @@ import org.chain3j.abi.datatypes.Int;
 import java.security.Timestamp;
 
 public class McBlockInfo {
-    public McBlockInfo(){}
-
-    private boolean success;
-    private String message;
-    private Data data;
-
-    public class Data{
         private String difficulty;
         private String extraData;
         private String gasLimit;
@@ -117,31 +110,5 @@ public class McBlockInfo {
         public String[] getUncles() {
             return uncles;
         }
-    }
-
-    public boolean getSuccess(){
-        return success;
-    }
-    public void setSuccess(boolean success){
-        this.success = success;
-    }
-
-    public String getMessage(){
-        return  message;
-    }
-    public void setMessage(String message){
-        this.message = message;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Data getData(){
-        return data;
-    }
-    public void setData(Data data){
-        this.data = data;
-    }
 
 }

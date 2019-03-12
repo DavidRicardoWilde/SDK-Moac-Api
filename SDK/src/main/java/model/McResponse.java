@@ -1,11 +1,11 @@
 package model;
 
-public class McResult {
-    public McResult(){}
+public class McResponse<T> {
+    public McResponse(){}
 
     private boolean success = false;
     private String message = null;
-    private String data = null;
+    private T data = null;
 
     public boolean getSuccess(){
         return success;
@@ -15,7 +15,7 @@ public class McResult {
         return message;
     }
 
-    public String getData(){
+    public T getData(){
         return data;
     }
 }

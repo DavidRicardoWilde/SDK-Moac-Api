@@ -1,14 +1,6 @@
 package model.acount;
 
 public class McRegister {
-    private boolean success;
-    private String message;
-    private Data data;
-
-    /**
-     * Parameter: paddress, privatekey, keystore
-     */
-    public class Data{
         private String address;
         private String privateKey;
         private String keyStore;
@@ -24,39 +16,4 @@ public class McRegister {
         public String getKeyStore(){
             return keyStore;
         }
-    }
-
-    public McRegister(boolean success, String message, Data data){
-        this.success = success;
-        this.message = message;
-        this.data = data;
-    }
-
-    //data
-
-    public boolean getSuccess(){
-        return success;
-    }
-    public void setSuccess(boolean success){
-        this.success = success;
-    }
-
-    public String getMessage(){
-        return  message;
-    }
-    public void setMessage(String message){
-        this.message = message;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Data getData(){
-        return data;
-    }
-    public void setData(Data data){
-        this.data = data;
-    }
-
 }

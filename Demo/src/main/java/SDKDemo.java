@@ -1,5 +1,6 @@
 import manager.MoacServiceManager;
-import model.vnode.McSendRawTransaction;
+import model.McResponse;
+import model.acount.McRegister;
 
 import java.io.IOException;
 
@@ -14,13 +15,13 @@ public class SDKDemo {
             String url = "http://139.198.126.104:8080/";
             MoacServiceManager moacServiceManager = new MoacServiceManager(url);
             //get auth token
-//            Auth auth = moacServiceManager.mc_getAuth("test","123456");
-//            System.out.println("token: "+auth.getToken());
+            McResponse auth = moacServiceManager.mc_getAuth("test","123456");
+            System.out.println("token: "+auth.getData());
 
             //register
             String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzZkMzYzZTNkYjhmYzM4M2VmNGU2OGQiLCJhY2NvdW50IjoidGVzdCIsInB3ZCI6IjEyMzQ1NiIsIl9fdiI6MCwiaWF0IjoxNTUyMDIwOTkzLCJleHAiOjE1NTIwMjgxOTN9.smJheU7Os3_UZq6X75WBdmPTHSFVXfnhyvsjfcvFSSM";
-//            McRegister register=moacServiceManager.mc_register("test", token);
-//            System.out.println("address: "+register.getData().getaddress());
+            McResponse<McRegister> register=moacServiceManager.mc_register("test", auth.getData().toString());
+            System.out.println("address: "+register.getData().getaddress());
 //            System.out.println("address: "+register.getData().getKeyStore());
 
             //login
@@ -60,9 +61,9 @@ public class SDKDemo {
 //            String [] paramtypes= new String[]{"uint256"};
             String paramtypes = "[\"uint256\"]";
             String privatekey="0xd3cab73941500840bbe7da562c5c3f2bc6b8979d1e59e07f13cec9c7a07e9884";
-            McSendRawTransaction mcSendRawTransaction = moacServiceManager.mc_sendRawTransaction("", "",
-                  from,to,amount,method,paramtypes,paramvalues,privatekey,token);
-            System.out.println("Message "+ mcSendRawTransaction.getSuccess());
+//            McSendRawTransaction mcSendRawTransaction = moacServiceManager.mc_sendRawTransaction("", "",
+//                  from,to,amount,method,paramtypes,paramvalues,privatekey,token);
+//            System.out.println("Message "+ mcSendRawTransaction.getSuccess());
 
 
         }catch (IOException e){

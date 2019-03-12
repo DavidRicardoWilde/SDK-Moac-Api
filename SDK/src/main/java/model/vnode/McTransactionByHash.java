@@ -7,13 +7,6 @@ import org.chain3j.abi.datatypes.Int;
  * Need to first determine if the variable "data" is null
  */
 public class McTransactionByHash {
-    private boolean success;
-    private String message;
-    private Data data;
-
-    public class Data{
-        public Data(){}
-
         private String blochHash;
         private String blockNumber;
         private String from;
@@ -149,29 +142,4 @@ public class McTransactionByHash {
         public void setShardingFlag(String shardingFlag) {
             this.shardingFlag = shardingFlag;
         }
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public Data getData() {
-        return data;
-    }
 }

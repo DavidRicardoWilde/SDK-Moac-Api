@@ -1,5 +1,7 @@
 package manager;
 
+import exception.McErrorEnums;
+import exception.McException;
 import model.*;
 import model.acount.*;
 import model.vnode.*;
@@ -26,17 +28,28 @@ public class MoacServiceManager {
      *  To get token
      * @throws IOException
      */
-    public McResponse mc_getAuth(String account, String password) throws IOException {
+    public McResponse mc_getAuth(String account, String password) throws IOException{
         Response<McResponse> response;
+
+            Call<McResponse> call=moacService.getMoacInterface().mc_auth(account,password);
+            response = call.execute();
+
+
+
+            return response.body();
+    }
+
+    public String mc_getAuthTest(String account, String password) throws IOException,McException{
+        Response<McResponse> response;
+
         Call<McResponse> call=moacService.getMoacInterface().mc_auth(account,password);
         response = call.execute();
 
-        return response.body();
-//        if (response.body().getSuccess() == true) {
-//            return new Auth(response.body().getSuccess(), response.body().getMessage(), response.body().getData());
-//        }else {
-//            return new Auth(response.body().getSuccess(), response.body().getMessage());
-//        }
+        if(response.body().getSuccess()){
+            throw new McException(response.body().getMessage());
+        }
+
+        return response.body().getData().toString();
     }
 
     /**

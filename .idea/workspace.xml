@@ -2,33 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e80050f-f245-44f1-ad0c-b2cff153f1a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SDK/src/main/java/exception/McErrorEnums.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SDK/src/main/java/exception/McErrorInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SDK/src/main/java/exception/McException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo/out/production/classes/SDKDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/out/production/classes/SDKDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Demo/src/main/java/SDKDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Demo/src/main/java/SDKDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/manager/MoacServiceManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/out/production/classes/manager/MoacServiceManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/out/production/classes/model/Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McBalance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McBlockInfo$Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McBlockInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McBlockNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/out/production/classes/model/McResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McSendRawTransaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McTransactionByHash$Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McTransactionByHash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McTransactionReceiptByHash$Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/McTransactionReceiptByHash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/Register$Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/model/Register.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/out/production/classes/network/MoacInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/out/production/classes/network/MoacInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/model/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/model/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/model/McResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/model/McResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/model/acount/McRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/model/acount/McRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McBlockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McBlockInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McTransactionByHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McTransactionByHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McTransactionReceiptByHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McTransactionReceiptByHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDK/src/main/java/network/MoacInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDK/src/main/java/network/MoacInterface.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -52,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDK/src/main/java/network/MoacInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
+            <state relative-caret-position="699">
+              <caret line="152" column="46" lean-forward="true" selection-start-line="152" selection-start-column="46" selection-end-line="152" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,19 +43,59 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDK/src/main/java/model/McResponse.java">
+        <entry file="file://$PROJECT_DIR$/SDK/src/main/java/exception/McErrorEnums.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="20" />
+              <folding>
+                <element signature="e#188#189#0" expanded="true" />
+                <element signature="e#220#221#0" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#312#313#0" expanded="true" />
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDK/src/main/java/exception/McException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+              <folding>
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#719#720#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDK/src/main/java/exception/McErrorInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2808">
-              <caret line="158" column="5" lean-forward="true" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
+            <state relative-caret-position="810">
+              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,6 +109,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -145,8 +164,11 @@
         <option value="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McTransactionByHash.java" />
         <option value="$PROJECT_DIR$/SDK/src/main/java/model/vnode/McTransactionReceiptByHash.java" />
         <option value="$PROJECT_DIR$/SDK/src/main/java/network/MoacInterface.java" />
-        <option value="$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java" />
         <option value="$PROJECT_DIR$/SDK/src/main/java/model/McResponse.java" />
+        <option value="$PROJECT_DIR$/SDK/src/main/java/exception/ErrorInterface.java" />
+        <option value="$PROJECT_DIR$/SDK/src/main/java/exception/McErrorEnums.java" />
+        <option value="$PROJECT_DIR$/SDK/src/main/java/exception/McException.java" />
+        <option value="$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java" />
       </list>
     </option>
   </component>
@@ -228,7 +250,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDK-Moac-Api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SDK-Moac-Api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="SDK" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDK-Moac-Api" type="b2602c69:ProjectViewProjectNode" />
@@ -238,7 +269,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="micro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDK-Moac-Api" type="b2602c69:ProjectViewProjectNode" />
@@ -310,12 +340,12 @@
       <workItem from="1551919685650" duration="37564000" />
       <workItem from="1552075972399" duration="639000" />
       <workItem from="1552152392239" duration="4301000" />
-      <workItem from="1552326025192" duration="7801000" />
+      <workItem from="1552326025192" duration="12632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50305000" />
+    <option name="totallyTimeSpent" value="55136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
@@ -324,7 +354,7 @@
       <window_info id="UI Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.12946783" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.12946783" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -566,10 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java">
+    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/network/MoacInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="158" column="5" lean-forward="true" selection-start-line="158" selection-start-column="5" selection-end-line="158" selection-end-column="5" />
+        <state relative-caret-position="699">
+          <caret line="152" column="46" lean-forward="true" selection-start-line="152" selection-start-column="46" selection-end-line="152" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -578,15 +608,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SDK/src/main/java/model/McResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="286">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/network/MoacInterface.java">
+    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/exception/McErrorInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="130" column="46" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
+        <state relative-caret-position="110">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/exception/McErrorEnums.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/exception/McException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding>
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDK/src/main/java/manager/MoacServiceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

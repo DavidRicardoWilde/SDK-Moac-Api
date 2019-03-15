@@ -6,10 +6,14 @@ import model.*;
 import model.acount.*;
 import model.vnode.*;
 import network.service.MoacService;
+import org.bouncycastle.util.test.TestResult;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.io.IOException;
+import java.net.ConnectException;
+import java.net.SocketTimeoutException;
 
 public class MoacServiceManager {
     private MoacService moacService;
@@ -34,8 +38,6 @@ public class MoacServiceManager {
             Call<McResponse> call=moacService.getMoacInterface().mc_auth(account,password);
             response = call.execute();
 
-
-
             return response.body();
     }
 
@@ -45,7 +47,7 @@ public class MoacServiceManager {
         Call<McResponse> call=moacService.getMoacInterface().mc_auth(account,password);
         response = call.execute();
 
-        if(response.body().getSuccess()){
+        if(!response.body().getSuccess()){
             throw new McException(response.body().getMessage());
         }
 
@@ -63,6 +65,25 @@ public class MoacServiceManager {
         Response<McResponse<McRegister>> response;
         Call<McResponse<McRegister>> call = moacService.getMoacInterface().mc_register(password,token);
         response = call.execute();
+
+        return response.body();
+    }
+
+    public McResponse mc_registerTest(String password, String token, TestResult testResult) throws IOException{
+        //Response<McResponse<McRegister>> response;
+
+        Call<McResponse<McRegister>> call = moacService.getMoacInterface().mc_register(password,token);
+        call.enqueue(new Callback<McResponse<McRegister>>() {
+            @Override
+            public void onResponse(Call<McResponse<McRegister>> call, Response<McResponse<McRegister>> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<McResponse<McRegister>> call, Throwable t) {
+
+            }
+        });
 
         return response.body();
     }

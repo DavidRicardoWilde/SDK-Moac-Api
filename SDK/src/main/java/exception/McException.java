@@ -7,13 +7,17 @@ public class McException extends Exception {
 
     private String errorDetail;
 
-    public McException(McErrorEnums mcErrorEnums, String errorDetail){
-        this.mcErrorEnums = mcErrorEnums;
-        this.errorDetail = errorDetail;
-    }
+//    public McException(McErrorEnums mcErrorEnums, String errorDetail){
+//        this.mcErrorEnums = mcErrorEnums;
+//        this.errorDetail = errorDetail;
+//    }
+
+//    public McException(String mcErrorCode){
+//
+//    }
 
     public McException(String errorDetail){
-        this.errorDetail=errorDetail;
+        super(errorDetail);
     }
 
     public McErrorEnums getMcErrorEnums() {

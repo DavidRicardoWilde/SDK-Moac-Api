@@ -2,6 +2,7 @@ import manager.MoacServiceManager;
 import model.McResponse;
 import model.acount.McRegister;
 
+import javax.xml.ws.Response;
 import java.io.IOException;
 
 public class SDKDemo {
@@ -69,5 +70,9 @@ public class SDKDemo {
         }catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    private void done(McRegister register){
+
     }
 }

@@ -47,4 +47,12 @@ dependencies {
             'com.squareup.okhttp3:logging-interceptor:3.10.0',
             'com.squareup.okhttp3:okhttp:3.8.0'
     )
+    
+    //log
+    implementation(
+            "log4j:log4j:1.2.17",
+            "org.slf4j:slf4j-log4j12:1.7.25",
+            "org.slf4j:slf4j-api:1.7.25"
+            
+    )
 }

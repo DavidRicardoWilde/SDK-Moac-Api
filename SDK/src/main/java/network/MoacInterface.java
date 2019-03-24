@@ -1,6 +1,7 @@
 package network;
 
 import model.*;
+import model.acount.McLogin;
 import model.acount.McRegister;
 import model.vnode.*;
 import retrofit2.Call;
@@ -30,7 +31,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/register")
-    Call<McResponse<McRegister>> mc_register(
+    Call<McRegister> mc_register(
             @Field("pwd") String pwd,
             @Field("token") String token
     );
@@ -45,7 +46,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/login")
-    Call<McResponse> mc_login(
+    Call<McResponse<McLogin>> mc_login(
             @Field("address") String address,
             @Field("pwd") String pwd,
             @Field("keystore") String keyStore,
@@ -62,7 +63,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBalance")
-    Call<McResponse> mc_getBalance(
+    Call<McResponse<McBalance>> mc_getBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
@@ -78,7 +79,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBlockNumber")
-    Call<McResponse> mc_getBlockNumber(
+    Call<McResponse<McBlockNumber>> mc_getBlockNumber(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("token") String token
@@ -151,7 +152,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/sendRawTransaction")
-    Call<McResponse> mc_sendRawTransaction(
+    Call<McResponse<McSendRawTransaction>> mc_sendRawTransaction(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("from")String from,
@@ -201,7 +202,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/transferErc")
-    Call<McResponse> mc_transferErc(
+    Call<McResponse<McTransferErc>> mc_transferErc(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeprot,
             @Field("from") String from,
@@ -223,7 +224,7 @@ public interface MoacInterface {
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getErcBalance")
-    Call<McResponse> mc_getErcBalance(
+    Call<McResponse<McErcBalance>> mc_getErcBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeprot") String vnodeport,
             @Field("address") String address,

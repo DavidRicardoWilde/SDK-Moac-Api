@@ -5,11 +5,11 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MoacService {
+public class MoacNetworkService {
     private Retrofit retrofit;
     private MoacInterface moacInterface;
 
-    public MoacService(String baseURL){
+    public MoacNetworkService(String baseURL){
         //
         retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)

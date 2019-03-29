@@ -1,14 +1,50 @@
 import manager.MoacService;
+import manager.MoacServiceAsyn;
 import model.McResponse;
+import network.service.MoacNetworkService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SDKDemo {
     public static void main(String[] args){
-        new SDKDemo().runV012();
+        new SDKDemo().runV020();
     }
+
     //asyn demo
+    public void runV020(){
+        String url = "http://139.198.126.104:8080/";
+        MoacServiceAsyn moacServiceAsyn = new MoacServiceAsyn(new MoacNetworkService(url));
+        //auth
+        try{
+            moacServiceAsyn.mc_getAuth("test", "123456", new Callback<McResponse>() {
+                @Override
+                public void onResponse(Call<McResponse> call, Response<McResponse> response) {
+                    System.out.println("auth_asyn = "+response.body().getData());
+                    //todo
+                }
+
+                @Override
+                public void onFailure(Call<McResponse> call, Throwable t) {
+                }
+            });
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 
     //v0.1.2 & new API
     public void runV012(){
+        String url = "http://139.198.126.104:8080/";
+        MoacService moacService = new MoacService(new MoacNetworkService(url));
+        //auth
+        try {
+            McResponse auth = moacService.mc_getAuth("test","123456");
+            System.out.println("auth = "+auth.getData());
+            //todo
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -16,7 +52,7 @@ public class SDKDemo {
     public void runV010(){
         try{
             String url = "http://139.198.126.104:8080/";
-            MoacService moacServiceManager = new MoacService(url);
+//            MoacService moacServiceManager = new MoacService(url);
 
 //            //get auth token
 //            McResponse auth = moacServiceManager.mc_getAuth("test","123456");

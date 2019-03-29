@@ -1,6 +1,7 @@
 package network;
 
 import model.*;
+import model.acount.McImport;
 import model.acount.McLogin;
 import model.acount.McRegister;
 import model.vnode.*;
@@ -12,8 +13,8 @@ import retrofit2.http.POST;
 public interface MoacInterface {
     /***
      *
-     * @param account Authorized account
-     * @param pwd Authorized password
+     * @param account
+     * @param pwd
      * @return
      */
     @FormUrlEncoded
@@ -25,8 +26,8 @@ public interface MoacInterface {
 
     /***
      *
-     * @param pwd wallet password
-     * @param token The token returned by API:Auth
+     * @param pwd
+     * @param token
      * @return
      */
     @FormUrlEncoded
@@ -38,48 +39,65 @@ public interface MoacInterface {
 
     /***
      *
-     * @param address wallet account address 0x**********
-     * @param pwd wallet account password
-     * @param keyStore KeyStore Information
-     * @param token The token returned by API:Auth
+     * @param address
+     * @param pwd
+     * @param encode
+     * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api/account/v1.0/login")
-    Call<McResponse<McLogin>> mc_login(
+    Call<McLogin> mc_login(
             @Field("address") String address,
             @Field("pwd") String pwd,
-            @Field("keystore") String keyStore,
+            @Field("encode") String encode,
             @Field("token")String token
     );
 
     /***
      *
-     * @param vnodeip vnode ip address
-     * @param vnodeport vnode port
-     * @param address wallet account address
-     * @param token The token returned by API:Auth
+     * @param address
+     * @param pwd
+     * @param keystore
+     * @param token
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("api/account/v1.0/import")
+    Call<McImport> mc_import(
+            @Field("address") String address,
+            @Field("pwd") String pwd,
+            @Field("keystore") String keystore,
+            @Field("token") String token
+    );
+
+    /***
+     *
+     * @param vnodeip
+     * @param vnodeport
+     * @param address
+     * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBalance")
-    Call<McResponse<McBalance>> mc_getBalance(
+    Call<McResponse> mc_getBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("address") String address,
             @Field("token") String token
     );
 
-    /**
+    /***
      *
-     * @param vnodeip vnode ip address
-     * @param vnodeport vnode port
-     * @param token The token returned by API:Auth
+     * @param vnodeip
+     * @param vnodeport
+     * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getBlockNumber")
-    Call<McResponse<McBlockNumber>> mc_getBlockNumber(
+    Call<McResponse> mc_getBlockNumber(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("token") String token
@@ -87,10 +105,10 @@ public interface MoacInterface {
 
     /***
      *
-     * @param vnodeip vnode ip address
-     * @param vnodeport vnode port
-     * @param block block number
-     * @param token The token returned by API:Auth
+     * @param vnodeip
+     * @param vnodeport
+     * @param block
+     * @param token
      * @return
      */
     @FormUrlEncoded
@@ -102,7 +120,7 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /**
+    /***
      *
      * @param vnodeip
      * @param vnodeport
@@ -119,7 +137,7 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /**
+    /***
      *
      * @param vnodeip
      * @param vnodeport
@@ -136,23 +154,23 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /**
+    /***
      *
-     * @param vnodeip vnode ip address
-     * @param vnodeport vnode port
-     * @param from from-address
-     * @param to    to-address
-     * @param amount amount (unit: moac)
-     * @param method dapp contract function
-     * @param paramtypes the type of param
-     * @param paramvalues the value of param
-     * @param privatekey the private key of wallet
-     * @param token The token returned by API:Auth
+     * @param vnodeip
+     * @param vnodeport
+     * @param from
+     * @param to
+     * @param amount
+     * @param method
+     * @param paramtypes
+     * @param paramvalues
+     * @param privatekey
+     * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/sendRawTransaction")
-    Call<McResponse<McSendRawTransaction>> mc_sendRawTransaction(
+    Call<McResponse> mc_sendRawTransaction(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeport,
             @Field("from")String from,
@@ -165,17 +183,6 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /***
-     *
-     * @param vnodeip vnode ip
-     * @param vnodeport vnode port
-     * @param address contract address
-     * @param method dapp contract function
-     * @param paramtypes the type of paramtypes
-     * @param paramvalues the values of paramtyes
-     * @param token The token returned by API:Auth
-     * @return
-     */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/callContract")
     Call<McResponse> mc_callContract(
@@ -190,19 +197,19 @@ public interface MoacInterface {
 
     /***
      *
-     * @param vnodeip vnode ip
-     * @param vnodeprot vnode port
-     * @param from from - address
-     * @param to to - address
-     * @param contractaddress contract address
+     * @param vnodeip
+     * @param vnodeprot
+     * @param from
+     * @param to
+     * @param contractaddress
      * @param amount
      * @param privatekey
-     * @param token The token returned by API:Auth
+     * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/transferErc")
-    Call<McResponse<McTransferErc>> mc_transferErc(
+    Call<McResponse> mc_transferErc(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeport") String vnodeprot,
             @Field("from") String from,
@@ -217,14 +224,14 @@ public interface MoacInterface {
      *
      * @param vnodeip
      * @param vnodeport
-     * @param address wallet address
+     * @param address
      * @param contractaddress
      * @param token
      * @return
      */
     @FormUrlEncoded
     @POST("api/vnode/v1.0/getErcBalance")
-    Call<McResponse<McErcBalance>> mc_getErcBalance(
+    Call<McResponse> mc_getErcBalance(
             @Field("vnodeip") String vnodeip,
             @Field("vnodeprot") String vnodeport,
             @Field("address") String address,
@@ -257,7 +264,7 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /**
+    /***
      *
      * @param vnodeip
      * @param vnodeport
@@ -284,13 +291,14 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /**
+    /***
      *
      * @param vnodeip
      * @param vnodeport
      * @param address
      * @param privatekey
      * @param microchainaddress
+     * @param method
      * @param paramtypes
      * @param paramvalues
      * @param token
@@ -329,15 +337,6 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /***
-     *
-     * @param microip
-     * @param microport
-     * @param microchainaddress
-     * @param blocknum
-     * @param token
-     * @return
-     */
     @FormUrlEncoded
     @POST("api//micro/v1.0/getBlock")
     Call<McResponse> micro_getBlock(
@@ -345,6 +344,25 @@ public interface MoacInterface {
             @Field("microport") String microport,
             @Field("microchainaddress") String microchainaddress,
             @Field("blocknum") String blocknum,
+            @Field("token") String token
+    );
+
+    @FormUrlEncoded
+    @POST("api/micro/v1.0/getTransactionByHash")
+    Call<McResponse> micro_getTransactionByHash(
+            @Field("microip") String microip,
+            @Field("microport") String microport,
+            @Field("microchainaddress") String microchainaddress,
+            @Field("token") String token
+    );
+
+    @FormUrlEncoded
+    @POST("api/micro/v1.0/getTransactionReceiptByHash")
+    Call<McResponse> micro_getTransactionReceiptByHash(
+            @Field("microip") String microip,
+            @Field("microport") String microport,
+            @Field("microchainaddress") String microchainaddress,
+            @Field("hash") String hash,
             @Field("token") String token
     );
 
@@ -367,6 +385,21 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
+    /***
+     *
+     * @param vnodeip
+     * @param vnodeport
+     * @param microip
+     * @param microport
+     * @param microchainaddress
+     * @param via
+     * @param from
+     * @param to
+     * @param amount
+     * @param privatekey
+     * @param token
+     * @return
+     */
     @FormUrlEncoded
     @POST("api//micro/v1.0/transferCoin")
     Call<McResponse> micro_transferCoin(
@@ -383,7 +416,7 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /**
+    /***
      *
      * @param vnodeip
      * @param vnodeport
@@ -420,16 +453,6 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
-    /***
-     *
-     * @param microip
-     * @param microport
-     * @param microchainaddress
-     * @param dappaddress
-     * @param data
-     * @param token
-     * @return
-     */
     @FormUrlEncoded
     @POST("api//micro/v1.0/callContract")
     Call<McResponse> micro_callContract(
@@ -470,6 +493,20 @@ public interface MoacInterface {
             @Field("token") String token
     );
 
+    /***
+     *
+     * @param vnodeip
+     * @param vnodeport
+     * @param microipHmonitor
+     * @param microport
+     * @param microchainaddress
+     * @param dappbaseaddress
+     * @param address
+     * @param amount
+     * @param privatekey
+     * @param token
+     * @return
+     */
     @FormUrlEncoded
     @POST("api//micro/v1.0/redeemMoacMintToken")
     Call<McResponse>micro_redeemMoacMintToken(

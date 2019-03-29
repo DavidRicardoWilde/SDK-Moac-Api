@@ -13,5 +13,28 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile project(':SDK') 
+    compile project(':SDK')
+
+    def retrofitVersion='2.3.0'
+
+    //network
+    implementation(
+            'commons-httpclient:commons-httpclient:3.1',
+
+            "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-moshi:${retrofitVersion}",
+            "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-jackson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-jackson:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-simplexml:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-moshi:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-wire:${retrofitVersion}",
+            "com.squareup.retrofit2:converter-scalars:${retrofitVersion}",
+
+            'com.squareup.okhttp3:logging-interceptor:3.10.0',
+            'com.squareup.okhttp3:okhttp:3.8.0'
+    )
 }

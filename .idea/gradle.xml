@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="F:/Gradle" />
+        <option name="gradleHome" value="E:/app/gradle-4.10.2-all/gradle-4.10.2" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$/SDK" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

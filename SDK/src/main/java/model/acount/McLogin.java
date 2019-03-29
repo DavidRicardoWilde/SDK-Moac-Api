@@ -5,7 +5,7 @@ public class McLogin {
 
     private boolean success = false;
     private String message = null;
-    private String data = null;
+    private String address = null;
 
     public boolean getSuccess(){
         return success;
@@ -15,7 +15,7 @@ public class McLogin {
         return message;
     }
 
-    public String getData(){
-        return data;
+    public String getAddress(){
+        return address;
     }
 }

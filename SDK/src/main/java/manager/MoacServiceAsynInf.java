@@ -2,6 +2,7 @@ package manager;
 
 import exception.McException;
 import model.McResponse;
+import model.acount.McImport;
 import model.acount.McLogin;
 import model.acount.McRegister;
 import model.vnode.*;
@@ -14,11 +15,13 @@ public interface MoacServiceAsynInf {
 
     void mc_register(String password, String token, Callback<McRegister> callback) throws IOException, McException;
 
-    void mc_login(String address, String pwd, String keyStore, String token, Callback<McResponse<McLogin>> callback) throws IOException, McException;
+    void mc_login(String address, String pwd, String encode, String token, Callback<McLogin> callback) throws IOException, McException;
 
-    void mc_getBalance(String vnodeip, String vnodeport, String address, String token, Callback<McResponse<McBalance>> callback) throws IOException, McException;
+    void mc_import(String address, String pwd, String keystore, String token, Callback<McImport> callback) throws IOException, McException;
 
-    void mc_getBlockNumber(String vnodeip, String vnodeport, String token, Callback<McResponse<McBlockNumber>> callback) throws IOException, McException;
+    void mc_getBalance(String vnodeip, String vnodeport, String address, String token, Callback<McResponse> callback) throws IOException, McException;
+
+    void mc_getBlockNumber(String vnodeip, String vnodeport, String token, Callback<McResponse> callback) throws IOException, McException;
 
     void mc_getBlockInfo(String vnodeip, String vnodeport, String block, String token, Callback<McResponse<McBlockInfo>> callback) throws IOException, McException;
 
@@ -26,11 +29,11 @@ public interface MoacServiceAsynInf {
 
     void mc_getTransactionReceiptByHash(String vnodeip, String vnodeport, String address, String token, Callback<McResponse<McTransactionReceiptByHash>> callback) throws IOException, McException;
 
-    void mc_sendRawTransaction(String vnodeip, String vnodeport, String from, String to, Integer amount, String method, String paramtypes, String paramvalues, String privatekey, String token, Callback<McResponse<McSendRawTransaction>> callback) throws IOException, McException;
+    void mc_sendRawTransaction(String vnodeip, String vnodeport, String from, String to, Integer amount, String method, String paramtypes, String paramvalues, String privatekey, String token, Callback<McResponse> callback) throws IOException, McException;
 
-    void mc_transferErc(String vnodeip, String vnodeport, String from, String to, String contractaddress, Integer amount, String privatekey, String token, Callback<McResponse<McTransferErc>> callback) throws IOException, McException;
+    void mc_transferErc(String vnodeip, String vnodeport, String from, String to, String contractaddress, Integer amount, String privatekey, String token, Callback<McResponse> callback) throws IOException, McException;
 
-    void mc_getErcBalance(String vnodeip, String vnodeport, String address, String contractaddress, String token, Callback<McResponse<McErcBalance>> callback) throws IOException, McException;
+    void mc_getErcBalance(String vnodeip, String vnodeport, String address, String contractaddress, String token, Callback<McResponse> callback) throws IOException, McException;
 
     void mc_ercApprove(String vnodeip, String vnodeport, String address, Integer amount, String privatekey, String microchainaddress, String contractaddress, String token, Callback<McResponse> callback) throws IOException, McException;
 

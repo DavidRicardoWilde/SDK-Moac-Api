@@ -2,6 +2,8 @@ package manager;
 
 import exception.McException;
 import model.McResponse;
+import model.acount.McImport;
+import model.acount.McLogin;
 import model.acount.McRegister;
 
 import java.io.IOException;
@@ -11,7 +13,9 @@ public interface MoacServiceInf {
 
     McRegister mc_register(String password, String token) throws IOException, McException;
 
-    McResponse mc_login(String address, String pwd, String keyStore, String  token) throws IOException, McException;
+    McLogin mc_login(String address, String pwd, String encode, String  token) throws IOException, McException;
+
+    McImport mc_import(String address, String pwd, String keystore, String token) throws IOException, McException;
 
     McResponse mc_getBalance(String vnodeip, String vnodeport, String address, String token) throws IOException, McException;
 

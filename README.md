@@ -10,7 +10,7 @@ Moac Restful API for Java and android.
 ```java
 MoacService moacServiceManager = new MoacService(url);
 ```
-For Asy.
+For Asynchronous request
 ```java
 MoacServiceAsyn moacServiceAsyn = new MoacServiceAsyn(new MoacNetworkService(url));
 ```

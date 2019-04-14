@@ -1,3 +1,4 @@
+import manager.CustomInf;
 import manager.MoacService;
 import manager.MoacServiceAsyn;
 import model.McResponse;
@@ -11,23 +12,20 @@ public class SDKDemo {
         new SDKDemo().runV020();
     }
 
+    public class MyCustom implements CustomInf{
+        public void doSomething(){
+            System.out.println("this is a test");
+        }
+    }
+
     //asyn demo
     public void runV020(){
         String url = "http://139.198.126.104:8080/";
         MoacServiceAsyn moacServiceAsyn = new MoacServiceAsyn(new MoacNetworkService(url));
         //auth
+        MyCustom myCustom = new MyCustom();
         try{
-            moacServiceAsyn.mc_getAuth("test", "123456", new Callback<McResponse>() {
-                @Override
-                public void onResponse(Call<McResponse> call, Response<McResponse> response) {
-                    System.out.println("auth_asyn = "+response.body().getData());
-                    //todo
-                }
-
-                @Override
-                public void onFailure(Call<McResponse> call, Throwable t) {
-                }
-            });
+            moacServiceAsyn.mc_getAuth("test", "123456", myCustom);
         }catch(Exception e){
             e.printStackTrace();
         }

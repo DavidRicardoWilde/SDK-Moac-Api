@@ -6,7 +6,7 @@ public class MicroTransferCoin {
     private String message = null;
     private String data = null;
 
-    public boolean getSuccess(){
+    public boolean isSuccess(){
         return success;
     }
 

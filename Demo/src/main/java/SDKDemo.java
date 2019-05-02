@@ -37,7 +37,7 @@ public class SDKDemo {
         MoacService moacService = new MoacService(new MoacNetworkService(url));
         //auth
         try {
-            McResponse auth = moacService.mc_getAuth("test","123456");
+            McResponse auth = moacService.mc_getAuth("test","1234j56");
             System.out.println("auth = "+auth.getData());
             //todo
         }catch (Exception e){

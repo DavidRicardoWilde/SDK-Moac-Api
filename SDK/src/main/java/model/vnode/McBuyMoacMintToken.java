@@ -3,15 +3,15 @@ package model.vnode;
 public class McBuyMoacMintToken {
     public McBuyMoacMintToken(){}
 
-    private Boolean success;
+    private boolean success;
     private String message;
     private String data;
 
-    public Boolean getSuccess() {
+    public boolean isSuccess() {
         return success;
     }
 
-    public void setSuccess(Boolean success) {
+    public void setSuccess(boolean success) {
         this.success = success;
     }
 

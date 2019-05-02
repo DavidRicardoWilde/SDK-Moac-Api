@@ -7,7 +7,7 @@ public class McResponse<T> {
     private String message = null;
     private T data = null;
 
-    public boolean getSuccess(){
+    public boolean isSuccess(){
         return success;
     }
 

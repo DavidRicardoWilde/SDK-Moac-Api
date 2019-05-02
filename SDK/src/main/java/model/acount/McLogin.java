@@ -7,7 +7,7 @@ public class McLogin {
     private String message = null;
     private String address = null;
 
-    public boolean getSuccess(){
+    public boolean isSuccess(){
         return success;
     }
 
